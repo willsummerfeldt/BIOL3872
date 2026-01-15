@@ -1,0 +1,292 @@
+---
+title: "BIOL3872 Lab2-Assignment"
+output: html_document
+date: "`r Sys.Date()`"
+author: ""
+student_id: ""
+---
+
+**BEFORE STARTING:**\
+1. Include your name and banner id (as shown in Brightspace) in the `author` and `student_id` section above as text (e.g., "Liam MacNeil", "B00123456").\
+2. Install and load the packages required to run your code chunks/
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Assignments will largely be evaluated based on your code chunk answers. If they are incomplete or formatted incorrectly (e.g., code chunks don't run), no marks will be awarded. I recommend experimenting with solving these answers in a separate script/Markdown document and reporting your answers with minimal script.
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 1 (2 points)
+
+You measured the body length (in cm) of 6 salamanders: 12.5, 14.2, 11.8, 13.6, 15.1, 12.9
+
+    a) Create a vector called `salamander_lengths` containing these measurements.
+    b) Calculate the mean length and store in variable called `mean_length`.
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 2 (2 points)
+
+Using the `salamander_lengths` vector from Task 1:
+
+    a)  How many salamanders were measured? Use a function and store the result in `num_salamanders`
+    b)  What is the length of the longest salamander? Store in `longest_salamander`
+    c)  What is the length of the shortest salamander? Store in `shortest_salamander`
+    d)  What is the length of the LAST salamander in your vector? Use indexing and store in `last_salamander`
+
+*Hint: use `length()` inside the square brackets to access the last element*
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+
+# c)
+# YOUR CODE HERE
+
+# d)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 3 (2 points)
+
+The following code has **THREE errors**. Fix them so the code runs correctly.
+
+```{r eval=FALSE}
+# Original code with errors (do not run):
+# a)
+# sample size <- 50
+# b)
+# Species_name <- "Ambystoma maculatum
+# c)
+# is_endangered < FALSE
+```
+
+```{r}
+# a)
+# YOUR CODE HERE
+# b)
+# YOUR CODE HERE
+# c)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 4 (3 points)
+
+Recorded daily temperatures (deg C) for one week:
+
+| Day       | Temperature |
+|-----------|-------------|
+| Monday    | 18.2        |
+| Tuesday   | 19.5        |
+| Wednesday | NA          |
+| Thursday  | 22.1        |
+| Friday    | 20.8        |
+| Saturday  | 17.9        |
+| Sunday    | 21.3        |
+
+    a)  Create a vector called `daily_temps` with these values (use NA for Wednesday)
+    b)  Calculate the mean temperature and store in `mean_temp` (hint: you need to handle the NA)
+    c)  How many days have missing data? Store the count in `num_missing`
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+
+# c)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 5 (3 points)
+
+Using the `daily_temps` vector from Task 4:
+
+    a)  Which days had temperatures above 20 deg C? (return the actual temperature values and store in a variable called `temps_above_20`)
+    b)  Replace the NA value with the mean of the other days
+    c)  Verify that there are no more NA values in the vector
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+# YOUR CODE HERE
+# YOUR CODE HERE
+
+# c)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 6 (3 points)
+
+Create a data frame called `field_samples` with the following data:
+
+| sample_id | pH  | depth_m | location |
+|-----------|-----|---------|----------|
+| "S001"    | 6.8 | 2.5     | "Lake A" |
+| "S002"    | 7.2 | 5.0     | "Lake A" |
+| "S003"    | 6.5 | 1.5     | "Lake B" |
+| "S004"    | 7.8 | 8.0     | "Lake B" |
+| "S005"    | 7.0 | 3.5     | "Lake A" |
+
+After creating the data frame, display its structure using `str()`.
+
+```{r}
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 7 (3 points)
+
+
+Using the `field_samples` data frame from Task 6:
+
+    a)  Extract only the pH column as a vector and store in `ph_values`
+    b)  What is the average depth across all samples? Store in `avg_depth`
+    c)  Filter to show only samples from "Lake B" and store in `lake_b_samples`
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+
+# c)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 8 (3 points)
+
+Using the `field_samples` data frame from Task 6:
+
+    a)  Add a new column called `depth_ft` that converts depth from meters to feet (1 meter = 3.28 feet)
+    b)  Add a new column called `is_deep` that is TRUE if depth_m \> 4, FALSE otherwise
+    c)  Display the updated data frame
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+
+# c)
+# YOUR CODE HERE
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 9 (5 points)
+
+**Putting it all together:**
+
+You are analyzing data from a marine survey.
+
+**a)** Create a data frame called `marine_survey` with:
+
+| station | depth_m | temperature_c | salinity_ppt | species_count |
+|---------|---------|---------------|--------------|---------------|
+| ST1     | 5       | 22.5          | 35.2         | 45            |
+| ST2     | 15      | 18.3          | 35.8         | 32            |
+| ST3     | 25      | 12.8          | 36.1         | 18            |
+| ST4     | 10      | 20.1          | 35.5         | 38            |
+| ST5     | 30      | 10.5          | 36.5         | 12            |
+| ST6     | 20      | 15.2          | 35.9         | 25            |
+
+**b)** Add a column `depth_category` that is "shallow" if depth_m \<= 15, otherwise "deep"
+
+**c)** Calculate summary statistics for species_count and store each in a variable:
+    - `species_mean`, `species_median`, `species_min`, `species_max`, `species_sd`
+
+**d)** Filter to show only deep stations (depth_m \> 15) and store in `deep_stations`
+
+**e)** Sort the data frame by species_count in descending order (most species first) and store in `sorted_survey`
+
+**f)** Is there a relationship between depth and species count? Calculate the correlation using `cor(x, y)` and store in `depth_species_cor`
+
+**g)** Interpret the result in a comment (positive/negative? strong/weak?)
+
+```{r}
+# a)
+# YOUR CODE HERE
+
+# b)
+# YOUR CODE HERE
+
+# c)
+# YOUR CODE HERE
+
+# d)
+# YOUR CODE HERE
+
+# e)
+# YOUR CODE HERE
+
+# f)
+# YOUR CODE HERE
+
+```
+
+:::
+
+------------------------------------------------------------------------
+
+::: {style="background-color: #44AA99; padding: padding: 5px; border-radius: 2px;"}
+## Task 9f Interpretation
+
+In the space below, provide your interpretation of the correlation coefficient from Task 9f.
+
+*Your interpretation here...*
+
+:::
