@@ -157,7 +157,8 @@ ggplot(mtcars2, aes(hp, mpg, color = am)) +  geom_point() + geom_smooth() +
     x = "Horsepower",
     y = "Miles per gallon",
     color = "Transmission type"
-  ) 
+  )
+
 ```
 
 ```{r}
@@ -183,8 +184,6 @@ theme(legend.position = 'bottom') +
 
 ```
 
-Choosing a smoother is somewhat arbitrary, importantly they're only capturing patterns you have, meaning their predictive power is not great.
-
 Let's look at another example from the datasauRus^1^ code :
 
 ```{r}
@@ -204,6 +203,9 @@ print(summary_stats)
 ```
 
 ```{r}
+selected_datasets <- datasaurus_dozen %>%
+  filter(dataset %in% c("dino", "circle", "x_shape", "star"))
+
 p_no_data <- ggplot(selected_datasets, aes(x = x, y = y)) +
   geom_smooth(method = "lm", se = TRUE, color = "red") +
   facet_wrap(~dataset, ncol = 2) +
@@ -358,7 +360,6 @@ Plot hp vs. mpg in the mtcars2 data and label the dots of four cars of interest 
 
 ```{r}
 # Your code here
-
 
 
 
@@ -613,8 +614,6 @@ plot(example,
 RColorBrewer::display.brewer.all()
 ```
 
-\
-
 Here is an example from the [**Economist**](https://www.economist.com) using sequential palettes and excellent visualization features to quicky convey the key message: Sea ice in the Arctic Ocean has been steadily retreating (on average) towards present. The sequential color palette nicely corresponds to a progressively colder scale.
 
 ```{r echo=FALSE, fig.align="center", include=TRUE, fig.height=15}
@@ -631,8 +630,6 @@ This figure displays the discrepancies that can occur in visual perception and t
 knitr::include_graphics(path.expand("../Figures/Figure_3.png"))
 ```
 
-\
-
 Another example from the **Economist**. In this case, the main title sets the stage to interpret the figures main components: The relative jump in housing prices was significant leading up to the COVID pandemic and was forecasted (in many places, underestimated!) to grow into this decade. The main color palettes are qualitative and the forecast uncertainties are shows in an easy-to-understand sequential palette. Our eyes naturally register country-level differences at the right side of the plot and the color codes are purposefully chosen to prevent too many similar colors bunching together in this space. Imagine if colors were chosen ignoring this, it might be as difficult as it is looking at the left side of the plot.
 
 ```{r echo=FALSE, fig.align="center", include=TRUE, fig.height=15}
@@ -644,19 +641,12 @@ Color is an extremely useful way to communicate information, as such it's import
 
 ## EXERCISE
 
-Using this ggplot2 to plot car weight versus miles per gallon using the built-in mtcars which maps the number of cylinders to point colour and facet the plot by the number of gears, use a colour palette of your choosing with scale_color_manual(), or other palettes you feel good about! Should you be using a discrete or continuous palette?
+Use the facet_wrap geom to plot player age versus batting average for every team in the MLB 2017 batting data. Be sure to label each panel with the team name code.
 
 ```{r}
 #YOUR CODE HERE
-ggplot(mtcars, aes(x = wt, y = mpg, colour = factor(cyl))) +
-  geom_point(size = 2) +
-  facet_wrap(~ gear) +
-  labs(
-    x = "Weight (1000 lbs)",
-    y = "Miles per gallon",
-    colour = "Cylinders",
-  ) +
-  theme_bw()
+
+
 
 ```
 
